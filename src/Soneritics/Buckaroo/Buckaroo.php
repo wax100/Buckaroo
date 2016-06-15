@@ -25,7 +25,7 @@
 namespace Buckaroo;
 
 use Buckaroo\ServiceOperations\ServiceOperation;
-use Buckaroo\ServiceOperationResponse\ServiceOperationResponse;
+use Buckaroo\Response\ServiceOperationResponse;
 use Buckaroo\Gateways\IGateway;
 use Buckaroo\Exceptions\UnableToConnectException;
 
