@@ -12,7 +12,7 @@ try {
         $currency = $transactionStatusResponse->getCurrency();
         $amount = $transactionStatusResponse->getAmount();
         echo "The order {$order} with amount {$currency} {$amount} has been paid.";
-    } elseif ($transactionStatusResponse->getStatus() === \Buckaroo\Status::SUCCESS) {
+    } elseif ($transactionStatusResponse->getStatus() === \Buckaroo\Status::PENDING_PROCESSING) {
         $paymentCode = $transactionStatusResponse->getPaymentCode();
         echo "The order is pending. Fetch transaction details later for order with payment code {$paymentCode}.";
     } else {
