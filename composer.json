@@ -13,6 +13,6 @@
         "squizlabs/php_codesniffer": "dev-master"
     },
     "autoload": {
-        "psr-4": {"Database\\": "Soneritics/Buckaroo/"}
+        "psr-4": {"Buckaroo\\": "Soneritics/Buckaroo/"}
     }
 }
