@@ -27,9 +27,7 @@ $response = $buckaroo->performServiceOperation($transactionRequest);
 try {
     $redirectURL = $response->getField('BRQ_REDIRECTURL');
     header("Location: {$redirectURL}");
-    die;
 } catch (Exception $ex) {
-    print_r($response->getFieldList());
     echo 'ERROR: Something went wrong: ' . $ex->getMessage();
 }
 ```
