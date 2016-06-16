@@ -116,7 +116,7 @@ class TransactionStatusResponse
         }
 
         $signature = new Signature($check, $this->secretKey);
-        if ((string)$signature !== $this->data['brq_signature']) {
+        if (empty($this->data['brq_signature']) || (string)$signature !== $this->data['brq_signature']) {
             throw new InvalidSignatureException;
         }
     }
