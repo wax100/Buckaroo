@@ -1,7 +1,7 @@
 {
-    "name": "soneritics/buckaroo",
+    "name": "wax100/buckaroo",
     "type": "library",
-    "description": "Buckaroo Payment Services implementation",
+    "description": "Fork of Buckaroo Payment Services implementation",
     "homepage": "https://soneritics.nl/",
     "license": "MIT",
     "minimum-stability": "dev",
