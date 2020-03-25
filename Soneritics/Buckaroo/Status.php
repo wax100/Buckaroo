@@ -37,4 +37,5 @@ class Status
     const FAILED = 490;
     const REJECTED = 690;
     const CANCELLED = 890;
+    const CANCELLED_MERCHANT = 891;
 }
