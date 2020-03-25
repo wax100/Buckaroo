@@ -26,7 +26,7 @@ namespace Buckaroo\ServiceOperations;
 
 use Buckaroo\Currency\ICurrency;
 use Buckaroo\Exceptions\MissingPropertyException;
-use Buckaroo\PaymentMethods\IPaymentMethod;
+//use Buckaroo\PaymentMethods\IPaymentMethod;
 
 /**
  * 
@@ -39,7 +39,7 @@ class TransactionRequest extends ServiceOperation
     /**
      * @var IPaymentMethod
      */
-    protected $paymentMethod;
+    //protected $paymentMethod;
 
     /**
      * @var ICurrency
@@ -94,7 +94,7 @@ class TransactionRequest extends ServiceOperation
     {
         $this->validate();
         $mappedFields = $this->getMappedFields();
-        $this->paymentMethod->addAdditionalFields($mappedFields);
+        //$this->paymentMethod->addAdditionalFields($mappedFields);
         return $mappedFields;
     }
 
@@ -103,11 +103,12 @@ class TransactionRequest extends ServiceOperation
      * @param IPaymentMethod $paymentMethod
      * @return TransactionRequest
      */
-    public function setPaymentMethod(IPaymentMethod $paymentMethod)
+    /*public function setPaymentMethod(IPaymentMethod $paymentMethod)
     {
         $this->paymentMethod = $paymentMethod;
         return $this;
-    }
+    }*/
+
 
     /**
      * 
@@ -215,7 +216,7 @@ class TransactionRequest extends ServiceOperation
     protected function validate()
     {
         $mandatory = [
-            'paymentMethod',
+            //'paymentMethod',
             'currency',
             'amount',
             'invoiceNumber',
@@ -238,7 +239,7 @@ class TransactionRequest extends ServiceOperation
     protected function getMappedFields()
     {
         $mapping = [
-            'brq_payment_method' => $this->paymentMethod->getPaymentMethod(),
+            //'brq_payment_method' => $this->paymentMethod->getPaymentMethod(),
             'brq_websitekey' => $this->websiteKey,
             'brq_currency' => $this->currency->getCurrencyString(),
             'brq_amount' => $this->amount,
@@ -248,7 +249,8 @@ class TransactionRequest extends ServiceOperation
             'brq_return' => $this->returnURL,
             'brq_returncancel' => $this->cancelURL,
             'brq_returnerror' => $this->rejectURL,
-            'brq_returnreject' => $this->errorURL
+            'brq_returnreject' => $this->errorURL,
+            'brq_continue_on_incomplete' => 'RedirectToHTML'
         ];
 
         $result = [];
